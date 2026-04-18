@@ -1,0 +1,14 @@
+{
+  "name": "favicon-generator-pro",
+  "version": "1.0.0",
+  "description": "Generate beautiful favicons in all formats with instant preview",
+  "main": "api/process.js",
+  "scripts": {
+    "dev": "node dev-server.js",
+    "vercel-build": "echo 'Build complete'"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

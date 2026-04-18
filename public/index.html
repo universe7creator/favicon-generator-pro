@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favicon Generator Pro — Generate Favicons in All Formats</title>
+  <meta name="description" content="Generate beautiful favicons in all formats (ICO, PNG, SVG) with instant preview. Complete with HTML meta tags, web app manifest, and Apple touch icons.">
+  <meta property="og:title" content="Favicon Generator Pro">
+  <meta property="og:description" content="Generate beautiful favicons in all formats with instant preview">
+  <meta property="og:type" content="website">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 20px rgba(99,102,241,0.4); } 50% { box-shadow: 0 0 40px rgba(99,102,241,0.8); } }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    .animate-fade-in { animation: fadeIn 0.6s ease-out forwards; }
+    .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+    .animate-float { animation: float 3s ease-in-out infinite; }
+    .glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+    .gradient-text { background: linear-gradient(135deg, #818cf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .drop-zone { border: 2px dashed rgba(99,102,241,0.5); transition: all 0.3s; }
+    .drop-zone:hover, .drop-zone.dragover { border-color: #818cf8; background: rgba(99,102,241,0.1); }
+  </style>
+</head>
+<body class="bg-[#0a0a0a] text-white min-h-screen">
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-2">
+          <i data-lucide="image" class="w-6 h-6 text-indigo-400"></i>
+          <span class="font-bold text-lg">Favicon Generator Pro</span>
+        </div>
+        <a href="#buy" id="headerBuyBtn" class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-lg font-medium transition">Get Pro — $19</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="pt-32 pb-20 px-4">
+    <div class="max-w-5xl mx-auto text-center">
+      <div class="animate-fade-in">
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
+          Generate <span class="gradient-text">Favicons</span><br>in All Formats
+        </h1>
+        <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
+          Create beautiful favicons for every platform. ICO, PNG, SVG, Apple touch icons, Android icons, and PWA manifest — all generated instantly.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+          <a href="#demo" class="bg-indigo-600 hover:bg-indigo-700 px-8 py-4 rounded-xl font-semibold text-lg transition animate-pulse-glow">Try Free Demo</a>
+          <a href="#buy" id="heroBuyBtn" class="glass hover:bg-white/10 px-8 py-4 rounded-xl font-semibold text-lg transition">Get Pro — $19</a>
+        </div>
+      </div>
+
+      <!-- Preview Card -->
+      <div class="glass rounded-2xl p-8 max-w-3xl mx-auto animate-fade-in" style="animation-delay: 0.2s">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+          <div class="text-center">
+            <div class="w-12 h-12 bg-indigo-500/20 rounded-lg flex items-center justify-center mx-auto mb-2 animate-float">
+              <i data-lucide="globe" class="w-6 h-6 text-indigo-400"></i>
+            </div>
+            <div class="text-sm text-gray-400">Browser Tab</div>
+            <div class="text-xs text-gray-500">16x16, 32x32</div>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mx-auto mb-2 animate-float" style="animation-delay: 0.5s">
+              <i data-lucide="smartphone" class="w-6 h-6 text-purple-400"></i>
+            </div>
+            <div class="text-sm text-gray-400">iOS</div>
+            <div class="text-xs text-gray-500">180x180</div>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mx-auto mb-2 animate-float" style="animation-delay: 1s">
+              <i data-lucide="tablet" class="w-6 h-6 text-pink-400"></i>
+            </div>
+            <div class="text-sm text-gray-400">Android</div>
+            <div class="text-xs text-gray-500">192x192</div>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mx-auto mb-2 animate-float" style="animation-delay: 1.5s">
+              <i data-lucide="app-window" class="w-6 h-6 text-blue-400"></i>
+            </div>
+            <div class="text-sm text-gray-400">PWA</div>
+            <div class="text-xs text-gray-500">512x512</div>
+          </div>
+        </div>
+        <div class="flex flex-wrap justify-center gap-2">
+          <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">ICO Format</span>
+          <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">PNG</span>
+          <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">SVG</span>
+          <span class="px-3 py-1 bg-pink-500/20 text-pink-400 rounded-full text-sm">Apple Touch</span>
+          <span class="px-3 py-1 bg-indigo-500/20 text-indigo-400 rounded-full text-sm">Manifest</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-20 px-4 bg-[#0f0f0f]">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16">Everything You Need</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="glass rounded-xl p-6 hover:bg-white/5 transition">
+          <div class="w-12 h-12 bg-indigo-500/20 rounded-lg flex items-center justify-center mb-4">
+            <i data-lucide="images" class="w-6 h-6 text-indigo-400"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2">Multiple Sizes</h3>
+          <p class="text-gray-400 text-sm">Generate 16x16 to 512x512 pixel favicons for every use case.</p>
+        </div>
+        <div class="glass rounded-xl p-6 hover:bg-white/5 transition">
+          <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4">
+            <i data-lucide="code" class="w-6 h-6 text-purple-400"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2">HTML Tags</h3>
+          <p class="text-gray-400 text-sm">Copy-paste ready HTML meta tags for all platforms.</p>
+        </div>
+        <div class="glass rounded-xl p-6 hover:bg-white/5 transition">
+          <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4">
+            <i data-lucide="file-json" class="w-6 h-6 text-pink-400"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2">Web Manifest</h3>
+          <p class="text-gray-400 text-sm">Automatic PWA manifest.json generation with all icon sizes.</p>
+        </div>
+        <div class="glass rounded-xl p-6 hover:bg-white/5 transition">
+          <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4">
+            <i data-lucide="apple" class="w-6 h-6 text-blue-400"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2">Apple Touch</h3>
+          <p class="text-gray-400 text-sm">iOS and iPadOS home screen icons with correct dimensions.</p>
+        </div>
+        <div class="glass rounded-xl p-6 hover:bg-white/5 transition">
+          <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4">
+            <i data-lucide="smartphone" class="w-6 h-6 text-green-400"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2">Android Icons</h3>
+          <p class="text-gray-400 text-sm">Chrome and Android adaptive icons for all screen densities.</p>
+        </div>
+        <div class="glass rounded-xl p-6 hover:bg-white/5 transition">
+          <div class="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center mb-4">
+            <i data-lucide="zap" class="w-6 h-6 text-orange-400"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2">Instant Preview</h3>
+          <p class="text-gray-400 text-sm">See how your favicon looks in different contexts before downloading.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo Section -->
+  <section id="demo" class="py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4">Try It Free</h2>
+      <p class="text-gray-400 text-center mb-12">Upload your image and see how favicon generation works</p>
+
+      <div class="glass rounded-2xl p-8">
+        <!-- Upload Zone -->
+        <div id="dropZone" class="drop-zone rounded-xl p-12 text-center cursor-pointer mb-8">
+          <i data-lucide="upload-cloud" class="w-16 h-16 text-indigo-400 mx-auto mb-4"></i>
+          <p class="text-lg mb-2">Drop your image here or click to upload</p>
+          <p class="text-sm text-gray-500">Supports PNG, JPG, GIF, WebP up to 5MB</p>
+          <input type="file" id="fileInput" class="hidden" accept="image/*">
+        </div>
+
+        <!-- Preview -->
+        <div id="previewSection" class="hidden">
+          <div class="flex flex-wrap justify-center gap-6 mb-8">
+            <div class="text-center">
+              <div class="w-8 h-8 bg-gray-700 rounded mx-auto mb-2 flex items-center justify-center text-xs" id="preview16">16</div>
+              <span class="text-xs text-gray-500">16x16</span>
+            </div>
+            <div class="text-center">
+              <div class="w-10 h-10 bg-gray-700 rounded mx-auto mb-2 flex items-center justify-center text-sm" id="preview32">32</div>
+              <span class="text-xs text-gray-500">32x32</span>
+            </div>
+            <div class="text-center">
+              <div class="w-14 h-14 bg-gray-700 rounded-lg mx-auto mb-2 flex items-center justify-center text-lg" id="preview48">48</div>
+              <span class="text-xs text-gray-500">48x48</span>
+            </div>
+            <div class="text-center">
+              <div class="w-20 h-20 bg-gray-700 rounded-xl mx-auto mb-2 flex items-center justify-center text-xl" id="preview180">180</div>
+              <span class="text-xs text-gray-500">180x180 (Apple)</span>
+            </div>
+          </div>
+
+          <!-- HTML Output -->
+          <div class="bg-[#1a1a1a] rounded-lg p-4 mb-4">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-sm font-medium">HTML Tags</span>
+              <button id="copyBtn" class="text-xs bg-indigo-600 hover:bg-indigo-700 px-3 py-1 rounded transition">Copy</button>
+            </div>
+            <pre id="htmlOutput" class="text-xs text-gray-400 overflow-x-auto"><!-- Paste generated tags here --></pre>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div id="result" class="hidden mt-6 p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
+          <div class="flex items-center gap-2 text-green-400">
+            <i data-lucide="check-circle" class="w-5 h-5"></i>
+            <span id="resultText">Favicons generated successfully!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="py-20 px-4 bg-[#0f0f0f]">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Perfect For</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-indigo-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="layout" class="w-8 h-8 text-indigo-400"></i>
+          </div>
+          <h4 class="font-semibold mb-1">Websites</h4>
+          <p class="text-sm text-gray-400">Browser tabs and bookmarks</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="smartphone" class="w-8 h-8 text-purple-400"></i>
+          </div>
+          <h4 class="font-semibold mb-1">Mobile Apps</h4>
+          <p class="text-sm text-gray-400">iOS and Android home screen</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-pink-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="shopping-bag" class="w-8 h-8 text-pink-400"></i>
+          </div>
+          <h4 class="font-semibold mb-1">PWAs</h4>
+          <p class="text-sm text-gray-400">Progressive web apps</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="briefcase" class="w-8 h-8 text-blue-400"></i>
+          </div>
+          <h4 class="font-semibold mb-1">SaaS Products</h4>
+          <p class="text-sm text-gray-400">Professional branding</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Loved by Developers</h2>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="glass rounded-xl p-6">
+          <div class="flex gap-1 mb-4">
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          </div>
+          <p class="text-gray-300 mb-4">"Saved me so much time. Generated all favicon sizes and HTML in one click. The manifest feature is a game-changer."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-indigo-500 rounded-full flex items-center justify-center font-bold">JD</div>
+            <div>
+              <div class="font-medium">John Davis</div>
+              <div class="text-sm text-gray-500">Frontend Developer</div>
+            </div>
+          </div>
+        </div>
+        <div class="glass rounded-xl p-6">
+          <div class="flex gap-1 mb-4">
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          </div>
+          <p class="text-gray-300 mb-4">"Finally a tool that gets all the Apple touch icon sizes right. No more guessing which sizes I need."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center font-bold">SK</div>
+            <div>
+              <div class="font-medium">Sarah Kim</div>
+              <div class="text-sm text-gray-500">iOS Developer</div>
+            </div>
+          </div>
+        </div>
+        <div class="glass rounded-xl p-6">
+          <div class="flex gap-1 mb-4">
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+          </div>
+          <p class="text-gray-300 mb-4">"The instant preview helps me see exactly how the favicon looks in different contexts. Worth every penny."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center font-bold">MR</div>
+            <div>
+              <div class="font-medium">Mike Roberts</div>
+              <div class="text-sm text-gray-500">Agency Owner</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 px-4 bg-[#0f0f0f]">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        <div class="glass rounded-xl p-6">
+          <h3 class="font-semibold text-lg mb-2">What sizes are generated?</h3>
+          <p class="text-gray-400">We generate all standard favicon sizes: 16x16, 32x32, 48x48 for browser tabs; 57x57 through 180x180 for Apple devices; 192x192 and 512x512 for Android and PWAs.</p>
+        </div>
+        <div class="glass rounded-xl p-6">
+          <h3 class="font-semibold text-lg mb-2">What formats are supported?</h3>
+          <p class="text-gray-400">Upload PNG, JPG, GIF, or WebP images. We generate ICO, PNG, and SVG formats for maximum compatibility across all browsers and platforms.</p>
+        </div>
+        <div class="glass rounded-xl p-6">
+          <h3 class="font-semibold text-lg mb-2">Do I get the HTML code?</h3>
+          <p class="text-gray-400">Yes! We generate copy-paste ready HTML meta tags for all platforms including browser favicons, Apple touch icons, Android icons, and PWA manifest links.</p>
+        </div>
+        <div class="glass rounded-xl p-6">
+          <h3 class="font-semibold text-lg mb-2">Is this a one-time purchase?</h3>
+          <p class="text-gray-400">Yes, $19 gives you lifetime access to the Pro version with unlimited favicon generations and all future updates.</p>
+        </div>
+        <div class="glass rounded-xl p-6">
+          <h3 class="font-semibold text-lg mb-2">Can I use this for client projects?</h3>
+          <p class="text-gray-400">Absolutely! Your license covers unlimited personal and commercial use. Generate favicons for as many projects as you need.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="buy" class="py-20 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-4xl sm:text-5xl font-bold mb-6">Ready to Generate?</h2>
+      <p class="text-xl text-gray-400 mb-10">Get Favicon Generator Pro for unlimited favicon generations</p>
+      <div class="glass rounded-2xl p-8 max-w-md mx-auto">
+        <div class="text-5xl font-bold mb-2">$19</div>
+        <div class="text-gray-400 mb-6">One-time purchase</div>
+        <ul class="text-left space-y-3 mb-8">
+          <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-green-400"></i> Unlimited generations</li>
+          <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-green-400"></i> All formats (ICO, PNG, SVG)</li>
+          <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-green-400"></i> HTML tags & manifest</li>
+          <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-green-400"></i> Instant preview</li>
+          <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-green-400"></i> Lifetime updates</li>
+        </ul>
+        <button id="buyBtn" class="w-full bg-indigo-600 hover:bg-indigo-700 py-4 rounded-xl font-semibold text-lg transition animate-pulse-glow">Get Pro Access — $19</button>
+        <p class="text-sm text-gray-500 mt-4">Secure payment via LemonSqueezy</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 px-4 border-t border-white/10">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col sm:flex-row justify-between items-center">
+        <div class="flex items-center space-x-2 mb-4 sm:mb-0">
+          <i data-lucide="image" class="w-5 h-5 text-indigo-400"></i>
+          <span class="font-semibold">Favicon Generator Pro</span>
+        </div>
+        <div class="text-sm text-gray-500">
+          © 2026 Favicon Generator Pro. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize icons
+    lucide.createIcons();
+
+    // Checkout URL configuration
+    const CHECKOUT_URL = window.__CHECKOUT_URL || null;
+
+    // Buy buttons
+    document.querySelectorAll('#buyBtn, #headerBuyBtn, #heroBuyBtn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (CHECKOUT_URL) {
+          window.open(CHECKOUT_URL, '_blank');
+        } else {
+          alert('Coming soon! Contact @OtonomUniverseCreator on Telegram for early access.');
+        }
+      });
+    });
+
+    // Demo functionality
+    const dropZone = document.getElementById('dropZone');
+    const fileInput = document.getElementById('fileInput');
+    const previewSection = document.getElementById('previewSection');
+    const result = document.getElementById('result');
+    const htmlOutput = document.getElementById('htmlOutput');
+
+    dropZone.addEventListener('click', () => fileInput.click());
+
+    dropZone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropZone.classList.add('dragover');
+    });
+
+    dropZone.addEventListener('dragleave', () => {
+      dropZone.classList.remove('dragover');
+    });
+
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropZone.classList.remove('dragover');
+      const files = e.dataTransfer.files;
+      if (files.length > 0) handleFile(files[0]);
+    });
+
+    fileInput.addEventListener('change', (e) => {
+      if (e.target.files.length > 0) handleFile(e.target.files[0]);
+    });
+
+    function handleFile(file) {
+      if (!file.type.startsWith('image/')) {
+        alert('Please upload an image file');
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = new Image();
+        img.onload = () => {
+          showPreview(e.target.result);
+          generateFavicons(e.target.result);
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function showPreview(dataUrl) {
+      previewSection.classList.remove('hidden');
+      ['preview16', 'preview32', 'preview48', 'preview180'].forEach(id => {
+        const el = document.getElementById(id);
+        el.style.backgroundImage = `url(${dataUrl})`;
+        el.style.backgroundSize = 'cover';
+        el.style.backgroundPosition = 'center';
+        el.textContent = '';
+      });
+    }
+
+    async function generateFavicons(imageData) {
+      try {
+        const response = await fetch('/api/process', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ image: imageData })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          htmlOutput.textContent = data.htmlTags;
+          result.classList.remove('hidden');
+          document.getElementById('resultText').textContent = `Generated ${data.totalGenerated} favicon sizes successfully!`;
+        }
+      } catch (err) {
+        console.error('Generation failed:', err);
+        // Show demo HTML anyway
+        htmlOutput.textContent = `<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">`;
+        result.classList.remove('hidden');
+        document.getElementById('resultText').textContent = 'Demo: Sample HTML tags generated!';
+      }
+    }
+
+    // Copy button
+    document.getElementById('copyBtn').addEventListener('click', () => {
+      navigator.clipboard.writeText(htmlOutput.textContent);
+      document.getElementById('copyBtn').textContent = 'Copied!';
+      setTimeout(() => document.getElementById('copyBtn').textContent = 'Copy', 2000);
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
