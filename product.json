@@ -1,17 +1,12 @@
 {
   "name": "Favicon Generator Pro",
   "slug": "favicon-generator-pro",
-  "tagline": "Generate beautiful favicons in all formats with instant preview",
-  "description": "Generate beautiful favicons in all formats with instant preview",
+  "description": "Generate favicon packages for all platforms - ICO, PNG, Apple touch icons, manifest.json, and browserconfig.xml",
   "price": "9",
-  "features": [],
-  "tech_stack": "Vercel + Node.js",
   "status": "building",
   "vercel_url": null,
   "github_url": null,
-  "lemonsqueezy_checkout_url": null,
-  "lemonsqueezy_product_id": null,
-  "webhook_url": null,
-  "created_cycle": null,
+  "checkout_url": null,
+  "created_cycle": 988,
   "deployed_cycle": null
 }
